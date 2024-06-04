@@ -1,0 +1,267 @@
+body {
+    background-color: rgb(230, 230, 230);
+}
+
+main {
+    background-color: rgb(180, 180, 180);
+    display: flex;
+    margin: auto;
+    gap: 5px;
+}
+
+li {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.Config_Panel {
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.Category_Selector {
+    margin: 10px;
+    padding: 10px;
+    background-color: rgb(230, 230, 230);
+    border-radius: 10px;
+}
+
+.Category_Selector ul {
+    margin: 10px;
+    padding: 10px;
+}
+
+.Category_Selector dt {
+    margin: auto;
+    padding: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom-color: rgb(35, 55, 155);
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+}
+
+.Category_Selector li {
+    text-decoration: none;
+    list-style: none;
+}
+
+.Category_Selector button {
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 10px;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    cursor: pointer;
+    background-color: rgb(230, 230, 230);
+}
+
+.Category_Selector button:hover {
+    color: rgb(240, 165, 30);
+}
+
+.Brand_Selector_01,
+.Brand_Selector_02,
+.Brand_Selector_03,
+.Brand_Selector_04,
+.Brand_Selector_05,
+.Brand_Selector_06,
+.Brand_Selector_07,
+.Brand_Selector_08,
+.Brand_Selector_09,
+.Brand_Selector_10 {
+    margin: 10px;
+    padding: 10px;
+    background-color: rgb(230, 230, 230);
+    border-radius: 10px;
+}
+
+.Brand_Selector_01 ul,
+.Brand_Selector_02 ul,
+.Brand_Selector_03 ul,
+.Brand_Selector_04 ul,
+.Brand_Selector_05 ul,
+.Brand_Selector_06 ul,
+.Brand_Selector_07 ul,
+.Brand_Selector_08 ul,
+.Brand_Selector_09 ul,
+.Brand_Selector_10 ul {
+    margin: 10px;
+    padding: 10px;
+}
+
+.Brand_Selector_01 dt,
+.Brand_Selector_02 dt,
+.Brand_Selector_03 dt,
+.Brand_Selector_04 dt,
+.Brand_Selector_05 dt,
+.Brand_Selector_06 dt,
+.Brand_Selector_07 dt,
+.Brand_Selector_08 dt,
+.Brand_Selector_09 dt,
+.Brand_Selector_10 dt {
+    margin: auto;
+    padding: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom-color: rgb(35, 55, 155);
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+}
+
+.Brand_Selector_01 li,
+.Brand_Selector_02 li,
+.Brand_Selector_03 li,
+.Brand_Selector_04 li,
+.Brand_Selector_05 li,
+.Brand_Selector_06 li,
+.Brand_Selector_07 li,
+.Brand_Selector_08 li,
+.Brand_Selector_09 li,
+.Brand_Selector_10 li {
+    text-decoration: none;
+    list-style: none;
+}
+
+.Brand_Selector_01 button,
+.Brand_Selector_02 button,
+.Brand_Selector_03 button,
+.Brand_Selector_04 button,
+.Brand_Selector_05 button,
+.Brand_Selector_06 button,
+.Brand_Selector_07 button,
+.Brand_Selector_08 button,
+.Brand_Selector_09 button,
+.Brand_Selector_10 button {
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 10px;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    cursor: pointer;
+    background-color: rgb(230, 230, 230);
+}
+
+.Brand_Selector_01 button:hover,
+.Brand_Selector_02 button:hover,
+.Brand_Selector_03 button:hover,
+.Brand_Selector_04 button:hover,
+.Brand_Selector_05 button:hover,
+.Brand_Selector_06 button:hover,
+.Brand_Selector_07 button:hover,
+.Brand_Selector_08 button:hover,
+.Brand_Selector_09 button:hover,
+.Brand_Selector_10 button:hover {
+    color: rgb(240, 165, 30);
+}
+
+.Vertical_Line {
+    border-color: rgb(160, 10, 10);
+    border-style: solid;
+    border-width: 2px;
+    height: auto;
+}
+
+.Product_Panel {
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.Joy_Division_01,
+.Joy_Division_02,
+.Joy_Division_03,
+.Joy_Division_04,
+.Joy_Division_05,
+.Joy_Division_06,
+.Joy_Division_07,
+.Joy_Division_08,
+.Joy_Division_09,
+.Joy_Division_10 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.Product_01,
+.Product_02,
+.Product_03,
+.Product_04,
+.Product_05,
+.Product_06,
+.Product_07,
+.Product_08,
+.Product_09,
+.Product_10 {
+    margin: 10px;
+    padding: 10px;
+    width: 300px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.Product_01 img,
+.Product_02 img,
+.Product_03 img,
+.Product_04 img,
+.Product_05 img,
+.Product_06 img,
+.Product_07 img,
+.Product_08 img,
+.Product_09 img,
+.Product_10 img {
+    width: 295px;
+    height: 295px;
+}
+
+.Product-Info h3 {
+    margin: 5px;
+    padding: 5px;
+    font-size: 20px;
+    color: rgb(50, 50, 50);
+}
+
+.Product-Info h4 {
+    margin: 5px;
+    padding: 5px;
+    font-size: 15px;
+    color: rgb(100, 95, 95);
+}
+
+.Product-Info p {
+    margin: 5px;
+    padding: 5px;
+    font-size: 15px;
+    color: rgb(160, 10, 10);
+}
+
+.btn-primary {
+    border: none;
+    border-radius: 10px;
+    margin: auto;
+    padding: 5px;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    cursor: pointer;
+    background-color: rgb(160, 10, 10);
+}
