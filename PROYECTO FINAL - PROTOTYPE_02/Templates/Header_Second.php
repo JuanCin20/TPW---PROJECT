@@ -42,7 +42,7 @@
 
             <div class="Trip_Container">
                 <i class="fa-solid fa-truck"></i>
-                <a href="My_Delivery.php">Mis Ordenes</a>
+                <a href="My_Delivery.php">Mis Órdenes</a>
             </div>
 
             <div class="Log_In_Container">
