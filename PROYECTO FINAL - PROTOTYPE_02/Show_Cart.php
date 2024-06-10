@@ -7,7 +7,7 @@ include 'Templates/Header_Second.php';
 <br>
 <h3>Lista del Carrito</h3>
 <?php if (!empty($_SESSION['Cart'])) { ?>
-    <table border="1">
+    <table class="Table_01">
         <tbody>
             <tr>
                 <th width=15% style="text-align: center;">Marca</th>
@@ -18,21 +18,23 @@ include 'Templates/Header_Second.php';
                 <th width=5%></th>
             </tr>
             <?php $Total_Venta = 0; ?>
-            <?php foreach ($_SESSION['Cart'] as $Index => $Producto) { ?>
+            <?php foreach ($_SESSION['Cart'] as $Index => $Product) { ?>
                 <tr>
-                    <td width=15% style="text-align: center;"><?php echo $Producto['Marca_Producto'] ?></td>
-                    <td width=40% style="text-align: center;"><?php echo $Producto['Nombre_Producto'] ?></td>
-                    <td width=15% style="text-align: center;">S/.<?php echo $Producto['Precio_Producto'] ?></td>
-                    <td width=20% style="text-align: center;"><?php echo $Producto['Cantidad'] ?></td>
-                    <td width=20% style="text-align: center;">S/.<?php echo number_format($Producto['Precio_Producto'] * $Producto['Cantidad'], 2); ?></td>
+                    <td width=15% style="text-align: center;"><?php echo $Product['Marca_Producto'] ?></td>
+                    <td width=40% style="text-align: center;"><?php echo $Product['Nombre_Producto'] ?></td>
+                    <td width=15% style="text-align: center;">S/.<?php echo $Product['Precio_Producto'] ?></td>
+                    <td width=20% style="text-align: center;"><?php echo $Product['Cantidad'] ?></td>
+                    <td width=20% style="text-align: center;">S/.<?php echo number_format($Product['Precio_Producto'] * $Product['Cantidad'], 2); ?></td>
                     <td width=5%>
-                        <form method="post">
-                            <input type="hidden" name="ID_Producto" id="ID_Producto" value="<?php echo openssl_encrypt($Producto['ID_Producto'], Encryption_Method, Key); ?>">
+                        <form method="POST">
+                            <input type="hidden" name="ID_Producto" id="ID_Producto" value="<?php echo openssl_encrypt($Product['ID_Producto'], Encryption_Method, Key); ?>">
                             <button class="btn btn-danger" type="submit" name="Action_Button" value="Delete">Eliminar</button>
                         </form>
                     </td>
                 </tr>
-                <?php $Total_Venta = $Total_Venta + ($Producto['Precio_Producto'] * $Producto['Cantidad']); ?>
+                <?php $Total_Venta = $Total_Venta + ($Product['Precio_Producto'] * $Product['Cantidad']); ?>
+                <?php //print_r($_SESSION["Cart"]); 
+                ?>
             <?php } ?>
             <tr>
                 <td></td>
@@ -45,8 +47,10 @@ include 'Templates/Header_Second.php';
             </tr>
         </tbody>
     </table>
+
     <br>
-    <form action="Pay.php" method="post">
+
+    <form action="Pay.php" method="POST">
         <div class="alert alert-success">
             <input type="hidden" name="Username_Usuario" id="Username_Usuario" value="<?php echo $_SESSION['Username_Usuario']; ?>">
             <div class="form-group">

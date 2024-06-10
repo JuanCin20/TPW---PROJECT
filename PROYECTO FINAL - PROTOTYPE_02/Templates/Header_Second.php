@@ -68,7 +68,7 @@
                                     <div>
                                         <h4><?php echo $Producto['Cantidad']; ?> x <?php echo $Producto['Nombre_Producto']; ?></h4>
                                         <p>S/.<?php echo $Producto['Precio_Producto']; ?></p>
-                                        <form method="post">
+                                        <form method="POST">
                                             <input type="hidden" name="ID_Producto" value="<?php echo openssl_encrypt($Producto['ID_Producto'], Encryption_Method, Key); ?>">
                                             <button class="btn-delete" type="submit" name="Action_Button" value="Delete">X</button>
                                         </form>

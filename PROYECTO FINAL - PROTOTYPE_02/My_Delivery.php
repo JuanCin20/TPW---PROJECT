@@ -20,7 +20,7 @@ if (is_array($Row_01)) {
 
 <br>
 <h3>Historial de Compra</h3>
-<table border="1">
+<table class="Table_02">
     <tbody>
         <tr>
             <th style="text-align: center;">Fecha de la Venta</th>
@@ -35,7 +35,6 @@ if (is_array($Row_01)) {
         FROM tabla_venta TV INNER JOIN tabla_detalle_venta TDV ON TV.ID_Venta = TDV.ID_Venta INNER JOIN tabla_producto TP ON TDV.ID_Producto = TP.ID_Producto WHERE ID_Usuario = '$ID_Usuario'");
         while ($Row_02 = mysqli_fetch_array($Result_02)) {
         ?>
-
             <tr>
                 <td style="text-align: center;"><?php echo $Row_02['Fecha_Venta'] ?></td>
                 <td style="text-align: center;"><?php echo $Row_02['Direccion_Venta'] ?></td>

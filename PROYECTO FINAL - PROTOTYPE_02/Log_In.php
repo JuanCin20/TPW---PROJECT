@@ -13,7 +13,7 @@
 	<h2>SignIn/SignUp</h2>
 	<div class="container" id="container">
 		<div class="form-container sign-up-container">
-			<form action="Valid_Access.php" method="post">
+			<form action="Valid_Access.php" method="POST">
 				<h1>Sign Up</h1>
 				<input type="text" placeholder="Username" id="Username_Usuario" name="Username_Usuario" />
 				<input type="password" placeholder="Password" id="Password_Usuario_02" name="Password_Usuario_02" />
@@ -24,7 +24,7 @@
 		</div>
 
 		<div class="form-container sign-in-container">
-			<form action="Valid_Access.php" method="post">
+			<form action="Valid_Access.php" method="POST">
 				<h1>Sign In</h1>
 				<input type="text" placeholder="Username" id="Username_Usuario" name="Username_Usuario" />
 				<input type="password" placeholder="Password" id="Password_Usuario_01" name="Password_Usuario_01" />

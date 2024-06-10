@@ -335,7 +335,7 @@ input[type="checkbox"] {
 }
 
 .btn-delete:hover {
-    background-color: rgb(126, 6, 6);
+    color: rgb(240, 165, 30);
 }
 
 .btn-danger {

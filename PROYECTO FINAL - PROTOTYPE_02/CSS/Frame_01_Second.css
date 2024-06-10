@@ -265,3 +265,7 @@ li {
     cursor: pointer;
     background-color: rgb(160, 10, 10);
 }
+
+.btn-primary:hover {
+    color: rgb(240, 165, 30);
+}

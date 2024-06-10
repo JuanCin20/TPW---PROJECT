@@ -10,11 +10,11 @@ main {
 }
 
 .fa-chevron-down:hover {
-    color: rgb(35, 55, 155);
+    color: rgb(240, 165, 30);
 }
 
 .fa-chevron-up:hover {
-    color: rgb(35, 55, 155);
+    color: rgb(240, 165, 30);
 }
 
 .Product_IMG {
@@ -130,7 +130,7 @@ main {
 }
 
 .Add_Cart_Button:hover {
-    color: rgb(35, 55, 155);
+    color: rgb(240, 165, 30);
 }
 
 .Product_Description,
@@ -152,7 +152,7 @@ main {
 
 .Title_Product_Description_Container h3:hover,
 .Title_Aditional_Product_Description_Container h3:hover {
-    color: rgb(35, 55, 155);
+    color: rgb(240, 165, 30);
 }
 
 .Title_Product_Description_Container h3,
@@ -182,4 +182,17 @@ main {
 .Text_Aditional_Product_Description_Container dl {
     margin: 5px;
     padding: 10px;
+}
+
+.Table_01,
+.Table_02,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.btn-danger {
+    margin-left: 5px;
+    margin-right: 5px;
 }

@@ -24,7 +24,6 @@ if (isset($_POST['Access'])) {
                 <h3 class="Message_07">Usuario No Registrado en la Base de Datos</h3>
 <?php
             }
-
             break;
     }
 }

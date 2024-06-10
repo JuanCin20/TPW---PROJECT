@@ -20,6 +20,7 @@ include 'Templates/Header_Second.php';
                 <li><button class="Category_Selector_Button" name="Option_08_Button" value="Option_08" type="submit" onclick="Function_08()">Almacenamiento</button></li>
                 <li><button class="Category_Selector_Button" name="Option_09_Button" value="Option_09" type="submit" onclick="Function_09()">Monitores</button></li>
                 <li><button class="Category_Selector_Button" name="Option_10_Button" value="Option_10" type="submit" onclick="Function_10()">Fuentes de Poder</button></li>
+            </ul>
         </div>
 
         <div class="Brand_Selector_01" hidden>
@@ -37,7 +38,7 @@ include 'Templates/Header_Second.php';
             </ul>
         </div>
 
-        <div class="Brand_Selector_02">
+        <div class="Brand_Selector_02" hidden>
             <ul>
                 <dt>Marca del Producto</dt>
                 <form method="POST" action="Operation_Second.php">
@@ -76,7 +77,7 @@ include 'Templates/Header_Second.php';
             </ul>
         </div>
 
-        <div class="Brand_Selector_05" hidden>
+        <div class="Brand_Selector_05">
             <ul>
                 <dt>Marca del Producto</dt>
                 <form method="POST" action="Operation_Second.php">
@@ -175,20 +176,20 @@ include 'Templates/Header_Second.php';
                 $Product_List = $Statement->fetchAll(PDO::FETCH_ASSOC);
                 //print_r($Product_List);
                 ?>
-                <?php foreach ($Product_List as $Producto) { ?>
+                <?php foreach ($Product_List as $Product) { ?>
                     <article class="Product_01">
-                        <img src="<?php echo $Producto['Imagen_Producto']; ?>" alt="<?php echo $Producto['Nombre_Producto']; ?>" title="<?php echo $Producto['Nombre_Producto']; ?>" class="card-img-top">
+                        <img src="<?php echo $Product['Imagen_Producto']; ?>" alt="<?php echo $Product['Nombre_Producto']; ?>" title="<?php echo $Product['Nombre_Producto']; ?>" class="card-img-top">
 
                         <div class="Product-Info">
-                            <h3><?php echo $Producto['Marca_Producto']; ?></h3>
-                            <h4><?php echo $Producto['Nombre_Producto']; ?></h4>
-                            <p>S/. <?php echo $Producto['Precio_Producto']; ?></p>
+                            <h3><?php echo $Product['Marca_Producto']; ?></h3>
+                            <h4><?php echo $Product['Nombre_Producto']; ?></h4>
+                            <p>S/. <?php echo $Product['Precio_Producto']; ?></p>
                             <form method="POST" action="Frame_02_Second.php">
-                                <input type="hidden" name="ID_Producto" id="ID_Producto" value="<?php echo openssl_encrypt($Producto['ID_Producto'], Encryption_Method, Key); ?>">
-                                <input type="hidden" name="ID_Categoria" id="ID_Categoria" value="<?php echo openssl_encrypt($Producto['ID_Categoria'], Encryption_Method, Key); ?>">
-                                <input type="hidden" name="Marca_Producto" id="Marca_Producto" value="<?php echo openssl_encrypt($Producto['Marca_Producto'], Encryption_Method, Key); ?>">
-                                <input type="hidden" name="Nombre_Producto" id="Nombre_Producto" value="<?php echo openssl_encrypt($Producto['Nombre_Producto'], Encryption_Method, Key); ?>">
-                                <input type="hidden" name="Precio_Producto" id="Precio_Producto" value="<?php echo openssl_encrypt($Producto['Precio_Producto'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="ID_Producto" id="ID_Producto" value="<?php echo openssl_encrypt($Product['ID_Producto'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="ID_Categoria" id="ID_Categoria" value="<?php echo openssl_encrypt($Product['ID_Categoria'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="Marca_Producto" id="Marca_Producto" value="<?php echo openssl_encrypt($Product['Marca_Producto'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="Nombre_Producto" id="Nombre_Producto" value="<?php echo openssl_encrypt($Product['Nombre_Producto'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="Precio_Producto" id="Precio_Producto" value="<?php echo openssl_encrypt($Product['Precio_Producto'], Encryption_Method, Key); ?>">
                                 <button class="btn btn-primary" name="Action_Button" value="Details" type="submit">Ver más Detalles</button>
                             </form>
                         </div>
@@ -197,7 +198,7 @@ include 'Templates/Header_Second.php';
             </div>
         </div>
 
-        <div class="Joy_Division_02_Upper">
+        <div class="Joy_Division_02_Upper" hidden>
             <div class="Joy_Division_02">
                 <?php
                 $Statement = $PDO->prepare("SELECT * FROM `tabla_producto` WHERE `ID_Categoria` = 2");
@@ -205,20 +206,20 @@ include 'Templates/Header_Second.php';
                 $Product_List = $Statement->fetchAll(PDO::FETCH_ASSOC);
                 //print_r($Product_List);
                 ?>
-                <?php foreach ($Product_List as $Producto) { ?>
+                <?php foreach ($Product_List as $Product) { ?>
                     <article class="Product_02">
-                        <img src="<?php echo $Producto['Imagen_Producto']; ?>" alt="<?php echo $Producto['Nombre_Producto']; ?>" title="<?php echo $Producto['Nombre_Producto']; ?>" class="card-img-top">
+                        <img src="<?php echo $Product['Imagen_Producto']; ?>" alt="<?php echo $Product['Nombre_Producto']; ?>" title="<?php echo $Product['Nombre_Producto']; ?>" class="card-img-top">
 
                         <div class="Product-Info">
-                            <h3><?php echo $Producto['Marca_Producto']; ?></h3>
-                            <h4><?php echo $Producto['Nombre_Producto']; ?></h4>
-                            <p>S/. <?php echo $Producto['Precio_Producto']; ?></p>
+                            <h3><?php echo $Product['Marca_Producto']; ?></h3>
+                            <h4><?php echo $Product['Nombre_Producto']; ?></h4>
+                            <p>S/. <?php echo $Product['Precio_Producto']; ?></p>
                             <form method="POST" action="Frame_02_Second.php">
-                                <input type="hidden" name="ID_Producto" id="ID_Producto" value="<?php echo openssl_encrypt($Producto['ID_Producto'], Encryption_Method, Key); ?>">
-                                <input type="hidden" name="ID_Categoria" id="ID_Categoria" value="<?php echo openssl_encrypt($Producto['ID_Categoria'], Encryption_Method, Key); ?>">
-                                <input type="hidden" name="Marca_Producto" id="Marca_Producto" value="<?php echo openssl_encrypt($Producto['Marca_Producto'], Encryption_Method, Key); ?>">
-                                <input type="hidden" name="Nombre_Producto" id="Nombre_Producto" value="<?php echo openssl_encrypt($Producto['Nombre_Producto'], Encryption_Method, Key); ?>">
-                                <input type="hidden" name="Precio_Producto" id="Precio_Producto" value="<?php echo openssl_encrypt($Producto['Precio_Producto'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="ID_Producto" id="ID_Producto" value="<?php echo openssl_encrypt($Product['ID_Producto'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="ID_Categoria" id="ID_Categoria" value="<?php echo openssl_encrypt($Product['ID_Categoria'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="Marca_Producto" id="Marca_Producto" value="<?php echo openssl_encrypt($Product['Marca_Producto'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="Nombre_Producto" id="Nombre_Producto" value="<?php echo openssl_encrypt($Product['Nombre_Producto'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="Precio_Producto" id="Precio_Producto" value="<?php echo openssl_encrypt($Product['Precio_Producto'], Encryption_Method, Key); ?>">
                                 <button class="btn btn-primary" name="Action_Button" value="Details" type="submit">Ver más Detalles</button>
                             </form>
                         </div>
@@ -235,20 +236,20 @@ include 'Templates/Header_Second.php';
                 $Product_List = $Statement->fetchAll(PDO::FETCH_ASSOC);
                 //print_r($Product_List);
                 ?>
-                <?php foreach ($Product_List as $Producto) { ?>
+                <?php foreach ($Product_List as $Product) { ?>
                     <article class="Product_03">
-                        <img src="<?php echo $Producto['Imagen_Producto']; ?>" alt="<?php echo $Producto['Nombre_Producto']; ?>" title="<?php echo $Producto['Nombre_Producto']; ?>" class="card-img-top">
+                        <img src="<?php echo $Product['Imagen_Producto']; ?>" alt="<?php echo $Product['Nombre_Producto']; ?>" title="<?php echo $Product['Nombre_Producto']; ?>" class="card-img-top">
 
                         <div class="Product-Info">
-                            <h3><?php echo $Producto['Marca_Producto']; ?></h3>
-                            <h4><?php echo $Producto['Nombre_Producto']; ?></h4>
-                            <p>S/. <?php echo $Producto['Precio_Producto']; ?></p>
+                            <h3><?php echo $Product['Marca_Producto']; ?></h3>
+                            <h4><?php echo $Product['Nombre_Producto']; ?></h4>
+                            <p>S/. <?php echo $Product['Precio_Producto']; ?></p>
                             <form method="POST" action="Frame_02_Second.php">
-                                <input type="hidden" name="ID_Producto" id="ID_Producto" value="<?php echo openssl_encrypt($Producto['ID_Producto'], Encryption_Method, Key); ?>">
-                                <input type="hidden" name="ID_Categoria" id="ID_Categoria" value="<?php echo openssl_encrypt($Producto['ID_Categoria'], Encryption_Method, Key); ?>">
-                                <input type="hidden" name="Marca_Producto" id="Marca_Producto" value="<?php echo openssl_encrypt($Producto['Marca_Producto'], Encryption_Method, Key); ?>">
-                                <input type="hidden" name="Nombre_Producto" id="Nombre_Producto" value="<?php echo openssl_encrypt($Producto['Nombre_Producto'], Encryption_Method, Key); ?>">
-                                <input type="hidden" name="Precio_Producto" id="Precio_Producto" value="<?php echo openssl_encrypt($Producto['Precio_Producto'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="ID_Producto" id="ID_Producto" value="<?php echo openssl_encrypt($Product['ID_Producto'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="ID_Categoria" id="ID_Categoria" value="<?php echo openssl_encrypt($Product['ID_Categoria'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="Marca_Producto" id="Marca_Producto" value="<?php echo openssl_encrypt($Product['Marca_Producto'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="Nombre_Producto" id="Nombre_Producto" value="<?php echo openssl_encrypt($Product['Nombre_Producto'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="Precio_Producto" id="Precio_Producto" value="<?php echo openssl_encrypt($Product['Precio_Producto'], Encryption_Method, Key); ?>">
                                 <button class="btn btn-primary" name="Action_Button" value="Details" type="submit">Ver más Detalles</button>
                             </form>
                         </div>
@@ -265,20 +266,20 @@ include 'Templates/Header_Second.php';
                 $Product_List = $Statement->fetchAll(PDO::FETCH_ASSOC);
                 //print_r($Product_List);
                 ?>
-                <?php foreach ($Product_List as $Producto) { ?>
+                <?php foreach ($Product_List as $Product) { ?>
                     <article class="Product_04">
-                        <img src="<?php echo $Producto['Imagen_Producto']; ?>" alt="<?php echo $Producto['Nombre_Producto']; ?>" title="<?php echo $Producto['Nombre_Producto']; ?>" class="card-img-top">
+                        <img src="<?php echo $Product['Imagen_Producto']; ?>" alt="<?php echo $Product['Nombre_Producto']; ?>" title="<?php echo $Product['Nombre_Producto']; ?>" class="card-img-top">
 
                         <div class="Product-Info">
-                            <h3><?php echo $Producto['Marca_Producto']; ?></h3>
-                            <h4><?php echo $Producto['Nombre_Producto']; ?></h4>
-                            <p>S/. <?php echo $Producto['Precio_Producto']; ?></p>
+                            <h3><?php echo $Product['Marca_Producto']; ?></h3>
+                            <h4><?php echo $Product['Nombre_Producto']; ?></h4>
+                            <p>S/. <?php echo $Product['Precio_Producto']; ?></p>
                             <form method="POST" action="Frame_02_Second.php">
-                                <input type="hidden" name="ID_Producto" id="ID_Producto" value="<?php echo openssl_encrypt($Producto['ID_Producto'], Encryption_Method, Key); ?>">
-                                <input type="hidden" name="ID_Categoria" id="ID_Categoria" value="<?php echo openssl_encrypt($Producto['ID_Categoria'], Encryption_Method, Key); ?>">
-                                <input type="hidden" name="Marca_Producto" id="Marca_Producto" value="<?php echo openssl_encrypt($Producto['Marca_Producto'], Encryption_Method, Key); ?>">
-                                <input type="hidden" name="Nombre_Producto" id="Nombre_Producto" value="<?php echo openssl_encrypt($Producto['Nombre_Producto'], Encryption_Method, Key); ?>">
-                                <input type="hidden" name="Precio_Producto" id="Precio_Producto" value="<?php echo openssl_encrypt($Producto['Precio_Producto'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="ID_Producto" id="ID_Producto" value="<?php echo openssl_encrypt($Product['ID_Producto'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="ID_Categoria" id="ID_Categoria" value="<?php echo openssl_encrypt($Product['ID_Categoria'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="Marca_Producto" id="Marca_Producto" value="<?php echo openssl_encrypt($Product['Marca_Producto'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="Nombre_Producto" id="Nombre_Producto" value="<?php echo openssl_encrypt($Product['Nombre_Producto'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="Precio_Producto" id="Precio_Producto" value="<?php echo openssl_encrypt($Product['Precio_Producto'], Encryption_Method, Key); ?>">
                                 <button class="btn btn-primary" name="Action_Button" value="Details" type="submit">Ver más Detalles</button>
                             </form>
                         </div>
@@ -287,7 +288,7 @@ include 'Templates/Header_Second.php';
             </div>
         </div>
 
-        <div class="Joy_Division_05_Upper" hidden>
+        <div class="Joy_Division_05_Upper">
             <div class="Joy_Division_05">
                 <?php
                 $Statement = $PDO->prepare("SELECT * FROM `tabla_producto` WHERE `ID_Categoria` = 5");
@@ -295,20 +296,20 @@ include 'Templates/Header_Second.php';
                 $Product_List = $Statement->fetchAll(PDO::FETCH_ASSOC);
                 //print_r($Product_List);
                 ?>
-                <?php foreach ($Product_List as $Producto) { ?>
+                <?php foreach ($Product_List as $Product) { ?>
                     <article class="Product_05">
-                        <img src="<?php echo $Producto['Imagen_Producto']; ?>" alt="<?php echo $Producto['Nombre_Producto']; ?>" title="<?php echo $Producto['Nombre_Producto']; ?>" class="card-img-top">
+                        <img src="<?php echo $Product['Imagen_Producto']; ?>" alt="<?php echo $Product['Nombre_Producto']; ?>" title="<?php echo $Product['Nombre_Producto']; ?>" class="card-img-top">
 
                         <div class="Product-Info">
-                            <h3><?php echo $Producto['Marca_Producto']; ?></h3>
-                            <h4><?php echo $Producto['Nombre_Producto']; ?></h4>
-                            <p>S/. <?php echo $Producto['Precio_Producto']; ?></p>
+                            <h3><?php echo $Product['Marca_Producto']; ?></h3>
+                            <h4><?php echo $Product['Nombre_Producto']; ?></h4>
+                            <p>S/. <?php echo $Product['Precio_Producto']; ?></p>
                             <form method="POST" action="Frame_02_Second.php">
-                                <input type="hidden" name="ID_Producto" id="ID_Producto" value="<?php echo openssl_encrypt($Producto['ID_Producto'], Encryption_Method, Key); ?>">
-                                <input type="hidden" name="ID_Categoria" id="ID_Categoria" value="<?php echo openssl_encrypt($Producto['ID_Categoria'], Encryption_Method, Key); ?>">
-                                <input type="hidden" name="Marca_Producto" id="Marca_Producto" value="<?php echo openssl_encrypt($Producto['Marca_Producto'], Encryption_Method, Key); ?>">
-                                <input type="hidden" name="Nombre_Producto" id="Nombre_Producto" value="<?php echo openssl_encrypt($Producto['Nombre_Producto'], Encryption_Method, Key); ?>">
-                                <input type="hidden" name="Precio_Producto" id="Precio_Producto" value="<?php echo openssl_encrypt($Producto['Precio_Producto'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="ID_Producto" id="ID_Producto" value="<?php echo openssl_encrypt($Product['ID_Producto'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="ID_Categoria" id="ID_Categoria" value="<?php echo openssl_encrypt($Product['ID_Categoria'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="Marca_Producto" id="Marca_Producto" value="<?php echo openssl_encrypt($Product['Marca_Producto'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="Nombre_Producto" id="Nombre_Producto" value="<?php echo openssl_encrypt($Product['Nombre_Producto'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="Precio_Producto" id="Precio_Producto" value="<?php echo openssl_encrypt($Product['Precio_Producto'], Encryption_Method, Key); ?>">
                                 <button class="btn btn-primary" name="Action_Button" value="Details" type="submit">Ver más Detalles</button>
                             </form>
                         </div>
@@ -325,20 +326,20 @@ include 'Templates/Header_Second.php';
                 $Product_List = $Statement->fetchAll(PDO::FETCH_ASSOC);
                 //print_r($Product_List);
                 ?>
-                <?php foreach ($Product_List as $Producto) { ?>
+                <?php foreach ($Product_List as $Product) { ?>
                     <article class="Product_06">
-                        <img src="<?php echo $Producto['Imagen_Producto']; ?>" alt="<?php echo $Producto['Nombre_Producto']; ?>" title="<?php echo $Producto['Nombre_Producto']; ?>" class="card-img-top">
+                        <img src="<?php echo $Product['Imagen_Producto']; ?>" alt="<?php echo $Product['Nombre_Producto']; ?>" title="<?php echo $Product['Nombre_Producto']; ?>" class="card-img-top">
 
                         <div class="Product-Info">
-                            <h3><?php echo $Producto['Marca_Producto']; ?></h3>
-                            <h4><?php echo $Producto['Nombre_Producto']; ?></h4>
-                            <p>S/. <?php echo $Producto['Precio_Producto']; ?></p>
+                            <h3><?php echo $Product['Marca_Producto']; ?></h3>
+                            <h4><?php echo $Product['Nombre_Producto']; ?></h4>
+                            <p>S/. <?php echo $Product['Precio_Producto']; ?></p>
                             <form method="POST" action="Frame_02_Second.php">
-                                <input type="hidden" name="ID_Producto" id="ID_Producto" value="<?php echo openssl_encrypt($Producto['ID_Producto'], Encryption_Method, Key); ?>">
-                                <input type="hidden" name="ID_Categoria" id="ID_Categoria" value="<?php echo openssl_encrypt($Producto['ID_Categoria'], Encryption_Method, Key); ?>">
-                                <input type="hidden" name="Marca_Producto" id="Marca_Producto" value="<?php echo openssl_encrypt($Producto['Marca_Producto'], Encryption_Method, Key); ?>">
-                                <input type="hidden" name="Nombre_Producto" id="Nombre_Producto" value="<?php echo openssl_encrypt($Producto['Nombre_Producto'], Encryption_Method, Key); ?>">
-                                <input type="hidden" name="Precio_Producto" id="Precio_Producto" value="<?php echo openssl_encrypt($Producto['Precio_Producto'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="ID_Producto" id="ID_Producto" value="<?php echo openssl_encrypt($Product['ID_Producto'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="ID_Categoria" id="ID_Categoria" value="<?php echo openssl_encrypt($Product['ID_Categoria'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="Marca_Producto" id="Marca_Producto" value="<?php echo openssl_encrypt($Product['Marca_Producto'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="Nombre_Producto" id="Nombre_Producto" value="<?php echo openssl_encrypt($Product['Nombre_Producto'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="Precio_Producto" id="Precio_Producto" value="<?php echo openssl_encrypt($Product['Precio_Producto'], Encryption_Method, Key); ?>">
                                 <button class="btn btn-primary" name="Action_Button" value="Details" type="submit">Ver más Detalles</button>
                             </form>
                         </div>
@@ -355,20 +356,20 @@ include 'Templates/Header_Second.php';
                 $Product_List = $Statement->fetchAll(PDO::FETCH_ASSOC);
                 //print_r($Product_List);
                 ?>
-                <?php foreach ($Product_List as $Producto) { ?>
+                <?php foreach ($Product_List as $Product) { ?>
                     <article class="Product_07">
-                        <img src="<?php echo $Producto['Imagen_Producto']; ?>" alt="<?php echo $Producto['Nombre_Producto']; ?>" title="<?php echo $Producto['Nombre_Producto']; ?>" class="card-img-top">
+                        <img src="<?php echo $Product['Imagen_Producto']; ?>" alt="<?php echo $Product['Nombre_Producto']; ?>" title="<?php echo $Product['Nombre_Producto']; ?>" class="card-img-top">
 
                         <div class="Product-Info">
-                            <h3><?php echo $Producto['Marca_Producto']; ?></h3>
-                            <h4><?php echo $Producto['Nombre_Producto']; ?></h4>
-                            <p>S/. <?php echo $Producto['Precio_Producto']; ?></p>
+                            <h3><?php echo $Product['Marca_Producto']; ?></h3>
+                            <h4><?php echo $Product['Nombre_Producto']; ?></h4>
+                            <p>S/. <?php echo $Product['Precio_Producto']; ?></p>
                             <form method="POST" action="Frame_02_Second.php">
-                                <input type="hidden" name="ID_Producto" id="ID_Producto" value="<?php echo openssl_encrypt($Producto['ID_Producto'], Encryption_Method, Key); ?>">
-                                <input type="hidden" name="ID_Categoria" id="ID_Categoria" value="<?php echo openssl_encrypt($Producto['ID_Categoria'], Encryption_Method, Key); ?>">
-                                <input type="hidden" name="Marca_Producto" id="Marca_Producto" value="<?php echo openssl_encrypt($Producto['Marca_Producto'], Encryption_Method, Key); ?>">
-                                <input type="hidden" name="Nombre_Producto" id="Nombre_Producto" value="<?php echo openssl_encrypt($Producto['Nombre_Producto'], Encryption_Method, Key); ?>">
-                                <input type="hidden" name="Precio_Producto" id="Precio_Producto" value="<?php echo openssl_encrypt($Producto['Precio_Producto'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="ID_Producto" id="ID_Producto" value="<?php echo openssl_encrypt($Product['ID_Producto'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="ID_Categoria" id="ID_Categoria" value="<?php echo openssl_encrypt($Product['ID_Categoria'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="Marca_Producto" id="Marca_Producto" value="<?php echo openssl_encrypt($Product['Marca_Producto'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="Nombre_Producto" id="Nombre_Producto" value="<?php echo openssl_encrypt($Product['Nombre_Producto'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="Precio_Producto" id="Precio_Producto" value="<?php echo openssl_encrypt($Product['Precio_Producto'], Encryption_Method, Key); ?>">
                                 <button class="btn btn-primary" name="Action_Button" value="Details" type="submit">Ver más Detalles</button>
                             </form>
                         </div>
@@ -385,20 +386,20 @@ include 'Templates/Header_Second.php';
                 $Product_List = $Statement->fetchAll(PDO::FETCH_ASSOC);
                 //print_r($Product_List);
                 ?>
-                <?php foreach ($Product_List as $Producto) { ?>
+                <?php foreach ($Product_List as $Product) { ?>
                     <article class="Product_08">
-                        <img src="<?php echo $Producto['Imagen_Producto']; ?>" alt="<?php echo $Producto['Nombre_Producto']; ?>" title="<?php echo $Producto['Nombre_Producto']; ?>" class="card-img-top">
+                        <img src="<?php echo $Product['Imagen_Producto']; ?>" alt="<?php echo $Product['Nombre_Producto']; ?>" title="<?php echo $Product['Nombre_Producto']; ?>" class="card-img-top">
 
                         <div class="Product-Info">
-                            <h3><?php echo $Producto['Marca_Producto']; ?></h3>
-                            <h4><?php echo $Producto['Nombre_Producto']; ?></h4>
-                            <p>S/. <?php echo $Producto['Precio_Producto']; ?></p>
+                            <h3><?php echo $Product['Marca_Producto']; ?></h3>
+                            <h4><?php echo $Product['Nombre_Producto']; ?></h4>
+                            <p>S/. <?php echo $Product['Precio_Producto']; ?></p>
                             <form method="POST" action="Frame_02_Second.php">
-                                <input type="hidden" name="ID_Producto" id="ID_Producto" value="<?php echo openssl_encrypt($Producto['ID_Producto'], Encryption_Method, Key); ?>">
-                                <input type="hidden" name="ID_Categoria" id="ID_Categoria" value="<?php echo openssl_encrypt($Producto['ID_Categoria'], Encryption_Method, Key); ?>">
-                                <input type="hidden" name="Marca_Producto" id="Marca_Producto" value="<?php echo openssl_encrypt($Producto['Marca_Producto'], Encryption_Method, Key); ?>">
-                                <input type="hidden" name="Nombre_Producto" id="Nombre_Producto" value="<?php echo openssl_encrypt($Producto['Nombre_Producto'], Encryption_Method, Key); ?>">
-                                <input type="hidden" name="Precio_Producto" id="Precio_Producto" value="<?php echo openssl_encrypt($Producto['Precio_Producto'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="ID_Producto" id="ID_Producto" value="<?php echo openssl_encrypt($Product['ID_Producto'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="ID_Categoria" id="ID_Categoria" value="<?php echo openssl_encrypt($Product['ID_Categoria'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="Marca_Producto" id="Marca_Producto" value="<?php echo openssl_encrypt($Product['Marca_Producto'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="Nombre_Producto" id="Nombre_Producto" value="<?php echo openssl_encrypt($Product['Nombre_Producto'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="Precio_Producto" id="Precio_Producto" value="<?php echo openssl_encrypt($Product['Precio_Producto'], Encryption_Method, Key); ?>">
                                 <button class="btn btn-primary" name="Action_Button" value="Details" type="submit">Ver más Detalles</button>
                             </form>
                         </div>
@@ -415,20 +416,20 @@ include 'Templates/Header_Second.php';
                 $Product_List = $Statement->fetchAll(PDO::FETCH_ASSOC);
                 //print_r($Product_List);
                 ?>
-                <?php foreach ($Product_List as $Producto) { ?>
+                <?php foreach ($Product_List as $Product) { ?>
                     <article class="Product_09">
-                        <img src="<?php echo $Producto['Imagen_Producto']; ?>" alt="<?php echo $Producto['Nombre_Producto']; ?>" title="<?php echo $Producto['Nombre_Producto']; ?>" class="card-img-top">
+                        <img src="<?php echo $Product['Imagen_Producto']; ?>" alt="<?php echo $Product['Nombre_Producto']; ?>" title="<?php echo $Product['Nombre_Producto']; ?>" class="card-img-top">
 
                         <div class="Product-Info">
-                            <h3><?php echo $Producto['Marca_Producto']; ?></h3>
-                            <h4><?php echo $Producto['Nombre_Producto']; ?></h4>
-                            <p>S/. <?php echo $Producto['Precio_Producto']; ?></p>
+                            <h3><?php echo $Product['Marca_Producto']; ?></h3>
+                            <h4><?php echo $Product['Nombre_Producto']; ?></h4>
+                            <p>S/. <?php echo $Product['Precio_Producto']; ?></p>
                             <form method="POST" action="Frame_02_Second.php">
-                                <input type="hidden" name="ID_Producto" id="ID_Producto" value="<?php echo openssl_encrypt($Producto['ID_Producto'], Encryption_Method, Key); ?>">
-                                <input type="hidden" name="ID_Categoria" id="ID_Categoria" value="<?php echo openssl_encrypt($Producto['ID_Categoria'], Encryption_Method, Key); ?>">
-                                <input type="hidden" name="Marca_Producto" id="Marca_Producto" value="<?php echo openssl_encrypt($Producto['Marca_Producto'], Encryption_Method, Key); ?>">
-                                <input type="hidden" name="Nombre_Producto" id="Nombre_Producto" value="<?php echo openssl_encrypt($Producto['Nombre_Producto'], Encryption_Method, Key); ?>">
-                                <input type="hidden" name="Precio_Producto" id="Precio_Producto" value="<?php echo openssl_encrypt($Producto['Precio_Producto'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="ID_Producto" id="ID_Producto" value="<?php echo openssl_encrypt($Product['ID_Producto'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="ID_Categoria" id="ID_Categoria" value="<?php echo openssl_encrypt($Product['ID_Categoria'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="Marca_Producto" id="Marca_Producto" value="<?php echo openssl_encrypt($Product['Marca_Producto'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="Nombre_Producto" id="Nombre_Producto" value="<?php echo openssl_encrypt($Product['Nombre_Producto'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="Precio_Producto" id="Precio_Producto" value="<?php echo openssl_encrypt($Product['Precio_Producto'], Encryption_Method, Key); ?>">
                                 <button class="btn btn-primary" name="Action_Button" value="Details" type="submit">Ver más Detalles</button>
                             </form>
                         </div>
@@ -445,20 +446,20 @@ include 'Templates/Header_Second.php';
                 $Product_List = $Statement->fetchAll(PDO::FETCH_ASSOC);
                 //print_r($Product_List);
                 ?>
-                <?php foreach ($Product_List as $Producto) { ?>
+                <?php foreach ($Product_List as $Product) { ?>
                     <article class="Product_10">
-                        <img src="<?php echo $Producto['Imagen_Producto']; ?>" alt="<?php echo $Producto['Nombre_Producto']; ?>" title="<?php echo $Producto['Nombre_Producto']; ?>" class="card-img-top">
+                        <img src="<?php echo $Product['Imagen_Producto']; ?>" alt="<?php echo $Product['Nombre_Producto']; ?>" title="<?php echo $Product['Nombre_Producto']; ?>" class="card-img-top">
 
                         <div class="Product-Info">
-                            <h3><?php echo $Producto['Marca_Producto']; ?></h3>
-                            <h4><?php echo $Producto['Nombre_Producto']; ?></h4>
-                            <p>S/. <?php echo $Producto['Precio_Producto']; ?></p>
+                            <h3><?php echo $Product['Marca_Producto']; ?></h3>
+                            <h4><?php echo $Product['Nombre_Producto']; ?></h4>
+                            <p>S/. <?php echo $Product['Precio_Producto']; ?></p>
                             <form method="POST" action="Frame_02_Second.php">
-                                <input type="hidden" name="ID_Producto" id="ID_Producto" value="<?php echo openssl_encrypt($Producto['ID_Producto'], Encryption_Method, Key); ?>">
-                                <input type="hidden" name="ID_Categoria" id="ID_Categoria" value="<?php echo openssl_encrypt($Producto['ID_Categoria'], Encryption_Method, Key); ?>">
-                                <input type="hidden" name="Marca_Producto" id="Marca_Producto" value="<?php echo openssl_encrypt($Producto['Marca_Producto'], Encryption_Method, Key); ?>">
-                                <input type="hidden" name="Nombre_Producto" id="Nombre_Producto" value="<?php echo openssl_encrypt($Producto['Nombre_Producto'], Encryption_Method, Key); ?>">
-                                <input type="hidden" name="Precio_Producto" id="Precio_Producto" value="<?php echo openssl_encrypt($Producto['Precio_Producto'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="ID_Producto" id="ID_Producto" value="<?php echo openssl_encrypt($Product['ID_Producto'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="ID_Categoria" id="ID_Categoria" value="<?php echo openssl_encrypt($Product['ID_Categoria'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="Marca_Producto" id="Marca_Producto" value="<?php echo openssl_encrypt($Product['Marca_Producto'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="Nombre_Producto" id="Nombre_Producto" value="<?php echo openssl_encrypt($Product['Nombre_Producto'], Encryption_Method, Key); ?>">
+                                <input type="hidden" name="Precio_Producto" id="Precio_Producto" value="<?php echo openssl_encrypt($Product['Precio_Producto'], Encryption_Method, Key); ?>">
                                 <button class="btn btn-primary" name="Action_Button" value="Details" type="submit">Ver más Detalles</button>
                             </form>
                         </div>

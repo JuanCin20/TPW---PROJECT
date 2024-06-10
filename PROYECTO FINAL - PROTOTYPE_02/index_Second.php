@@ -3,7 +3,6 @@ include 'Global/Configuration.php';
 include 'Global/Connection.php';
 include 'Cart.php';
 include 'Templates/Header_Second.php';
-
 ?>
 
 <!-- Slider main container -->
@@ -11,9 +10,9 @@ include 'Templates/Header_Second.php';
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper anuncio_wrapper">
         <!-- Slides -->
-        <a href="https://www.nvidia.com/es-la/geforce/graphics-cards/40-series/" class="swiper-slide" align="center" width="100%"><img class="anuncio_img" src="https://cyccomputer.pe/modules/labslideshow/images/eac45d97e4efbc2e44f52c9fea6856427360ac2d_BANNERMSISUPERSERIE40.png"></a>
-        <a href="https://wilsoncompuplaza.com/" class="swiper-slide" align="center" width="100%"><img class="anuncio_img" src="https://apicompuplaza.compuplaza.net.pe/public/uploads/2024-04-18/LoL02sEFVWUc0qfuNAPfuwfxBgGCVdwaUknHDwKx.webp"></a>
-        <a href="https://www.asus.com/campaign/tuf-gaming/global/" class="swiper-slide" align="center" width="100%"><img class="anuncio_img" src="https://apicompuplaza.compuplaza.net.pe/public/uploads/2024-05-07/RGihHMPqiaUh1mjVsNivPNgsA9pUnaBgBmyw1Fzq.webp"></a>
+        <a href="https://www.nvidia.com/es-la/geforce/graphics-cards/40-series/" class="swiper-slide" style="align-self: center;" width="100%"><img class="anuncio_img" src="https://cyccomputer.pe/modules/labslideshow/images/eac45d97e4efbc2e44f52c9fea6856427360ac2d_BANNERMSISUPERSERIE40.png"></a>
+        <a href="https://wilsoncompuplaza.com/" class="swiper-slide" style="align-self: center;" width="100%"><img class="anuncio_img" src="https://apicompuplaza.compuplaza.net.pe/public/uploads/2024-04-18/LoL02sEFVWUc0qfuNAPfuwfxBgGCVdwaUknHDwKx.webp"></a>
+        <a href="https://www.asus.com/campaign/tuf-gaming/global/" class="swiper-slide" style="align-self: center;" width="100%"><img class="anuncio_img" src="https://apicompuplaza.compuplaza.net.pe/public/uploads/2024-05-07/RGihHMPqiaUh1mjVsNivPNgsA9pUnaBgBmyw1Fzq.webp"></a>
     </div>
     <!-- If we need pagination -->
     <div class="swiper-pagination"></div>

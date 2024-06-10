@@ -1,9 +1,8 @@
 <footer id="foot">
     <div class="foo">
         <div class="fooboxes">
-
             <div class="footer-box">
-                <h2 class="">DigitalTech</h2>
+                <h2 class="">Digital Tech</h2>
                 <hr>
                 <ul class="foo-subinfo">
                     <li>
@@ -25,16 +24,16 @@
                 <h2 class="">Productos</h2>
                 <hr>
                 <ul class="foo-subinfo">
-                    <li><a href="Footer_HP_First_01.php">Placas Madre</a></li>
-                    <li><a href="Footer_HP_First_02.php">Procesadores</a></li>
-                    <li><a href="Footer_HP_First_03.php">Tarjetas de Video</a></li>
-                    <li><a href="Footer_HP_First_04.php">Memorias Ram</a></li>
-                    <li><a href="Footer_HP_First_05.php">Teclados</a></li>
-                    <li><a href="Footer_HP_First_06.php">Mouses</a></li>
-                    <li><a href="Footer_HP_First_07.php">Cases</a></li>
-                    <li><a href="Footer_HP_First_08.php">Almacenamiento</a></li>
-                    <li><a href="Footer_HP_First_09.php">Monitores</a></li>
-                    <li><a href="Footer_HP_First_10.php">Fuentes de Poder</a></li>
+                    <li><a href="HP_First_01_F.php">Placas Madre</a></li>
+                    <li><a href="HP_First_02_F.php">Procesadores</a></li>
+                    <li><a href="HP_First_03_F.php">Tarjetas de Video</a></li>
+                    <li><a href="HP_First_04_F.php">Memorias Ram</a></li>
+                    <li><a href="HP_First_05_F.php">Teclados</a></li>
+                    <li><a href="HP_First_06_F.php">Mouses</a></li>
+                    <li><a href="HP_First_07_F.php">Cases</a></li>
+                    <li><a href="HP_First_08_F.php">Almacenamiento</a></li>
+                    <li><a href="HP_First_09_F.php">Monitores</a></li>
+                    <li><a href="HP_First_10_F.php">Fuentes de Poder</a></li>
                 </ul>
             </div>
 
@@ -48,9 +47,6 @@
             </div>
 
             <div class="footer-box">
-                <!-- <div>
-                        <div></div>
-                    </div> -->
                 <div class="links">
                     <h2>Síguenos</h2>
                     <hr>
